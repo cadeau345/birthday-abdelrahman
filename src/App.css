@@ -1196,3 +1196,113 @@ text-align: center;
 letter-spacing: 2px;
 
 }
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+.title {
+
+font-size: 32px !important;
+
+text-align: center;
+
+}
+
+.cake {
+
+width: 220px !important;
+
+margin-top: 20px;
+
+}
+
+.avatar {
+
+width: 180px !important;
+
+}
+
+.balloon {
+
+font-size: 40px !important;
+
+}
+
+.final-message {
+
+font-size: 18px !important;
+
+padding: 10px;
+
+text-align: center;
+
+}
+
+/* الكتاب */
+
+.flip-book {
+
+transform: scale(0.75);
+
+}
+
+/* subtitle */
+
+.subtitle-text {
+
+font-size: 18px !important;
+
+padding: 10px 15px;
+
+}
+
+/* welcome screen */
+
+.welcome-text {
+
+font-size: 34px !important;
+
+}
+
+.name-bounce {
+
+font-size: 44px !important;
+
+}
+
+/* password page */
+
+.login-card {
+
+width: 90% !important;
+
+padding: 20px !important;
+
+}
+
+.login-title {
+
+font-size: 26px !important;
+
+}
+
+.login-input {
+
+font-size: 16px !important;
+
+}
+
+.login-btn {
+
+font-size: 16px !important;
+
+}
+
+}
+.avatar {
+
+max-width: 80%;
+
+height: auto;
+
+}

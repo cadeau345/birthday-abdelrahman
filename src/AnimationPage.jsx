@@ -219,7 +219,7 @@ useEffect(() => {
 
               src="/photo.jpg"
 
-              className="avatar"
+          className="avatar"
 
             />
 

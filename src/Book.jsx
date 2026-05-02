@@ -114,9 +114,8 @@ setShowSubtitle(true);
 
       <HTMLFlipBook
 
-        width={450}
-
-        height={550}
+     width={window.innerWidth < 768 ? 300 : 450}
+height={window.innerWidth < 768 ? 420 : 550}
 
         ref={bookRef}
 
