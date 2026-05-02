@@ -112,16 +112,35 @@ setShowSubtitle(true);
 
     >
 
-      <HTMLFlipBook
+<HTMLFlipBook
 
-     width={window.innerWidth < 768 ? 300 : 450}
-height={window.innerWidth < 768 ? 420 : 550}
+width={window.innerWidth < 768 ? 320 : 450}
 
-        ref={bookRef}
+height={window.innerWidth < 768 ? 460 : 550}
 
-        className="flip-book"
+size="stretch"
 
-      >
+minWidth={280}
+
+maxWidth={600}
+
+minHeight={400}
+
+maxHeight={700}
+
+maxShadowOpacity={0.5}
+
+showCover={true}
+
+mobileScrollSupport={true}
+
+usePortrait={true}
+
+ref={bookRef}
+
+className="flip-book"
+
+>
 
         {/* الصفحة الأولى */}
 
