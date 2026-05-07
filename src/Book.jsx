@@ -7,6 +7,7 @@ import VoiceSubtitle from "./VoiceSubtitle";
 function Book() {
 
   const bookRef = useRef(null);
+    const videoRefs = useRef([]);
 
   const navigate = useNavigate();
 
@@ -14,12 +15,35 @@ function Book() {
   const [showSubtitle, setShowSubtitle] = useState(false);
 
   const [zoomLastPage, setZoomLastPage] = useState(false);
+  const [currentVideo, setCurrentVideo] = useState(0);
 
-  const totalPages = 6;
+ useEffect(() => {
+
+  videoRefs.current.forEach((video, index) => {
+
+    if (!video) return;
+
+    if (index === currentVideo) {
+
+      video.play().catch(()=>{});
+
+    } else {
+
+      video.pause();
+
+      video.currentTime = 0;
+
+    }
+
+  });
+
+}, [currentVideo]);
+
+ const totalPages = 17;
 
 
   useEffect(() => {
-
+   
     let currentPage = 0;
 
     const flipSound = new Audio("/flip.mp3");
@@ -41,7 +65,7 @@ function Book() {
 
       }
 
-    }, 2500);
+    }, 8000);
 
 
     // zoom الصفحة الأخيرة مباشرة بعد آخر flip
@@ -50,7 +74,7 @@ function Book() {
 
       setZoomLastPage(true);
 
-    }, totalPages * 2500);
+    }, totalPages * 8000);
 
 
     // إغلاق الكتاب بعد zoom
@@ -71,7 +95,7 @@ voice.play().catch(()=>{});
 
 setShowSubtitle(true);
 
-    }, totalPages * 2500 + 1200);
+}, totalPages * 8000 + 1200);
 
 
     // الرجوع للبداية بعد تشغيل الصوت مباشرة
@@ -80,7 +104,7 @@ setShowSubtitle(true);
 
       navigate("/home");
 
-    }, totalPages * 2500 + 2500);
+   }, totalPages * 8000 + 2500);
 
 
     return () => {
@@ -137,6 +161,11 @@ mobileScrollSupport={true}
 usePortrait={true}
 
 ref={bookRef}
+onFlip={(e) => {
+
+  setCurrentVideo(e.data);
+
+}}
 
 className="flip-book"
 
@@ -181,6 +210,7 @@ className="flip-book"
             وعقبال سنين مليانة نجاح وفرحة 🎂
 
           </p>
+          
 
         </div>
 
@@ -231,6 +261,334 @@ className="flip-book"
           </p>
 
         </div>
+        <div className="page inside">
+
+  <h2>❤️</h2>
+
+  <p>
+
+   ❤️ message from Abdallah Omar ❤️
+
+  </p>
+
+  <video
+ref={(el) => (videoRefs.current[5] = el)}
+    className="memory-video"
+
+    src="/video1.mp4"
+
+autoPlay={currentVideo === 6}
+
+controls
+
+playsInline
+
+muted={false}
+
+loop
+
+/>
+
+</div>
+<div className="page inside">
+
+  <h2>❤️</h2>
+
+  <p>
+
+❤️ A message from Abdeldayem ❤️
+  </p>
+
+  <video
+
+ref={(el) => (videoRefs.current[5] = el)}
+    className="memory-video"
+
+    src="/video2.mp4"
+
+autoPlay={currentVideo === 7}
+
+controls
+
+playsInline
+
+muted={false}
+
+loop
+
+/>
+
+</div>
+<div className="page inside">
+
+  <h2>❤️</h2>
+
+  <p>
+
+❤️ A message from Hesham ❤️
+
+  </p>
+
+  <video
+  ref={(el) => (videoRefs.current[5] = el)}
+
+    className="memory-video"
+
+    src="/video3.mp4"
+
+autoPlay={currentVideo === 8}
+
+controls
+
+playsInline
+
+muted={false}
+
+loop
+
+/>
+
+</div>
+<div className="page inside">
+
+  <h2>❤️</h2>
+
+  <p>
+
+  A message from Hamza ❤️
+
+  </p>
+
+  <video
+  ref={(el) => (videoRefs.current[5] = el)}
+
+    className="memory-video"
+
+    src="/video4.mp4"
+
+autoPlay={currentVideo === 9}
+
+controls
+
+playsInline
+
+muted={false}
+
+loop
+
+/>
+
+</div>
+<div className="page inside">
+
+  <h2>❤️</h2>
+
+  <p>
+
+❤️ A message from Moaz Mahmoud ❤️
+
+  </p>
+
+  <video
+  ref={(el) => (videoRefs.current[5] = el)}
+
+    className="memory-video"
+
+    src="/video5.mp4"
+
+autoPlay={currentVideo === 10}
+
+controls
+
+playsInline
+
+muted={false}
+
+loop
+
+/>
+
+</div>
+<div className="page inside">
+
+  <h2>❤️</h2>
+
+  <p>
+
+ ❤️ A message from Mohamed Hamza ❤️
+
+  </p>
+
+  <video
+  ref={(el) => (videoRefs.current[5] = el)}
+
+    className="memory-video"
+
+    src="/video6.mp4"
+
+autoPlay={currentVideo === 11}
+
+controls
+
+playsInline
+
+muted={false}
+
+loop
+
+/>
+
+</div>
+<div className="page inside">
+
+  <h2>❤️</h2>
+
+  <p>
+
+  ❤️ A message from Aktham ❤️
+
+  </p>
+
+  <video
+  ref={(el) => (videoRefs.current[5] = el)}
+
+    className="memory-video"
+
+    src="/video7.mp4"
+
+autoPlay={currentVideo === 12}
+
+controls
+
+playsInline
+
+muted={false}
+
+loop
+
+/>
+
+</div>
+<div className="page inside">
+
+  <h2>❤️</h2>
+
+  <p>
+
+  ❤️ A message from Ali ❤️
+
+  </p>
+
+  <video
+  ref={(el) => (videoRefs.current[5] = el)}
+
+    className="memory-video"
+
+    src="/video8.mp4"
+
+autoPlay={currentVideo === 13}
+
+controls
+
+playsInline
+
+muted={false}
+
+loop
+
+/>
+
+</div>
+<div className="page inside">
+
+  <h2>❤️</h2>
+
+  <p>
+
+  ❤️ A message from Mohamed Ramadan ❤️
+
+  </p>
+
+  <video
+  ref={(el) => (videoRefs.current[5] = el)}
+
+    className="memory-video"
+
+    src="/video9.mp4"
+
+autoPlay={currentVideo === 14}
+
+controls
+
+playsInline
+
+muted={false}
+
+loop
+
+/>
+
+</div>
+<div className="page inside">
+
+  <h2>❤️</h2>
+
+  <p>
+
+ ❤️ A message from Moaz Eltaweel ❤️
+
+  </p>
+
+  <video
+  ref={(el) => (videoRefs.current[5] = el)}
+
+    className="memory-video"
+
+    src="/video10.mp4"
+
+autoPlay={currentVideo === 15}
+
+controls
+
+playsInline
+
+muted={false}
+
+loop
+
+/>
+
+</div>
+<div className="page inside">
+
+  <h2>❤️</h2>
+
+  <p>
+
+  ❤️ A message from Adham ❤️
+
+  </p>
+
+  <video
+  ref={(el) => (videoRefs.current[5] = el)}
+
+    className="memory-video"
+
+    src="/video11.mp4"
+
+autoPlay={currentVideo === 16}
+
+controls
+
+playsInline
+
+muted={false}
+
+loop
+
+/>
+
+</div>
 
 
         {/* الصفحة الأخيرة */}

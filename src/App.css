@@ -1453,3 +1453,29 @@ box-shadow:
 }
 
 }
+.memory-video {
+
+width: 100%;
+
+max-width: 260px;
+
+border-radius: 18px;
+
+margin-top: 20px;
+
+object-fit: cover;
+
+box-shadow:
+
+0 10px 25px rgba(0,0,0,0.15);
+
+}
+@media (max-width: 768px) {
+
+.memory-video {
+
+max-width: 220px;
+
+}
+
+}
